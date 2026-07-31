@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DashUI - Automotive UI/UX Archive</title>
+  <title>Automotive UI/UX Archive</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +49,7 @@
       break-inside: avoid;
       margin-bottom: 20px;
       background-color: #1a1a1a;
+      border-radius: 10px;
       overflow: hidden;
       border: 1px solid #2a2a2a;
     }
@@ -93,66 +94,57 @@
 <body>
 
   <header>
-    <h1>DashUI - Car Interface Archive</h1>
+    <h1>Car Interface Archive</h1>
     <p class="description">
-      A curated collection of information and interaction design solutions from modern and classic cars, serving as a great source of inspiration. Curated by Pablo Robles.
+      A curated collection of information and interaction design solutions from modern and classic cars, serving as a great source of inspiration.
     </p>
   </header>
 
-  <div class="gallery" id="gallery">
-
-    <div class="gallery-item">
-      <video autoplay loop muted playsinline>
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-dashboard-of-a-car-driving-at-night-42283-large.mp4" type="video/mp4">
-      </video>
-      <div class="credits">
-        © Video by <a href="#" target="_blank">Brand / Author Name</a>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <img src="https://picsum.photos/400/500?random=1" alt="Classic Car Dashboard">
-      <div class="credits">
-        © Photo by <a href="#" target="_blank">Source Name</a>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <img src="https://picsum.photos/400/300?random=2" alt="Modern Infotainment">
-      <div class="credits">
-        © 2026 Original Creator / All Rights Reserved
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <video autoplay loop muted playsinline>
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-driving-on-a-road-41712-large.mp4" type="video/mp4">
-      </video>
-      <div class="credits">
-        © Concept Design by <a href="#" target="_blank">Studio Name</a>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <img src="https://picsum.photos/400/600?random=5" alt="Speedometer Cluster">
-      <div class="credits">
-        © Photo by <a href="#" target="_blank">Archive Collection</a>
-      </div>
-    </div>
-
-  </div>
+  <div class="gallery" id="gallery"></div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", async () => {
       const gallery = document.getElementById("gallery");
-      const items = Array.from(gallery.children);
 
-      for (let i = items.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [items[i], items[j]] = [items[j], items[i]];
+      try {
+        const response = await fetch('data.json');
+        const items = await response.json();
+
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [items[i], items[j]] = [items[j], items[i]];
+        }
+
+        items.forEach(item => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = "gallery-item";
+
+          let mediaHTML = "";
+          if (item.type === "video") {
+            mediaHTML = `
+              <video autoplay loop muted playsinline>
+                <source src="${item.src}" type="video/mp4">
+              </video>`;
+          } else {
+            mediaHTML = `<img src="${item.src}" alt="${item.alt || ''}">`;
+          }
+
+          const creditLink = item.creditUrl 
+            ? `<a href="${item.creditUrl}" target="_blank">${item.creditText}</a>`
+            : item.creditText;
+
+          itemDiv.innerHTML = `
+            ${mediaHTML}
+            <div class="credits">
+              © ${creditLink}
+            </div>
+          `;
+
+          gallery.appendChild(itemDiv);
+        });
+      } catch (error) {
+        console.error("Error loading gallery data:", error);
       }
-
-      items.forEach(item => gallery.appendChild(item));
     });
   </script>
 
