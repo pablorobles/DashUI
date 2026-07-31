@@ -1,0 +1,23 @@
+[
+  {
+    "type": "video",
+    "src": "https://assets.mixkit.co/videos/preview/mixkit-dashboard-of-a-car-driving-at-night-42283-large.mp4",
+    "alt": "Car Dashboard Night",
+    "creditText": "Video by Brand Name",
+    "creditUrl": "https://example.com"
+  },
+  {
+    "type": "image",
+    "src": "https://picsum.photos/400/500?random=1",
+    "alt": "Classic Car Dashboard",
+    "creditText": "Photo by Source Name",
+    "creditUrl": "https://example.com"
+  },
+  {
+    "type": "image",
+    "src": "https://picsum.photos/400/300?random=2",
+    "alt": "Modern Infotainment",
+    "creditText": "2026 Original Creator",
+    "creditUrl": ""
+  }
+]
