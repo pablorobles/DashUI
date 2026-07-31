@@ -44,6 +44,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .gallery-item {
       break-inside: avoid;
       margin-bottom: 20px;
@@ -66,7 +67,6 @@
       transform: scale(1.02);
     }
 
-    /* Copyright & Credits Badge */
     .credits {
       padding: 10px 12px;
       font-size: 0.75rem;
@@ -83,6 +83,7 @@
     .credits a:hover {
       text-decoration: underline;
     }
+
     @media (max-width: 768px) {
       .gallery {
         column-count: 1;
@@ -99,20 +100,17 @@
     </p>
   </header>
 
-  <div class="gallery">
+  <div class="gallery" id="gallery">
 
-    <!-- EXAMPLE 1: VIDEO ITEM -->
     <div class="gallery-item">
       <video autoplay loop muted playsinline>
         <source src="https://assets.mixkit.co/videos/preview/mixkit-dashboard-of-a-car-driving-at-night-42283-large.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
       <div class="credits">
         © Video by <a href="#" target="_blank">Brand / Author Name</a>
       </div>
     </div>
 
-    <!-- EXAMPLE 2: IMAGE ITEM -->
     <div class="gallery-item">
       <img src="https://picsum.photos/400/500?random=1" alt="Classic Car Dashboard">
       <div class="credits">
@@ -120,7 +118,6 @@
       </div>
     </div>
 
-    <!-- EXAMPLE 3: ANOTHER IMAGE ITEM -->
     <div class="gallery-item">
       <img src="https://picsum.photos/400/300?random=2" alt="Modern Infotainment">
       <div class="credits">
@@ -137,7 +134,28 @@
       </div>
     </div>
 
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/600?random=5" alt="Speedometer Cluster">
+      <div class="credits">
+        © Photo by <a href="#" target="_blank">Archive Collection</a>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gallery = document.getElementById("gallery");
+      const items = Array.from(gallery.children);
+
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+
+      items.forEach(item => gallery.appendChild(item));
+    });
+  </script>
 
 </body>
 </html>
