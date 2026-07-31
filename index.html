@@ -3,49 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DashUI</title>
+  <title>DashUI - Automotive UI/UX Archive</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      background-color: #222222;
+      background-color: #111;
       color: #fff;
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 40px 20px;
     }
 
-    h1 {
+    header {
       text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+    }
+
+    h1 {
       font-weight: 700;
+      font-size: 2.2rem;
       letter-spacing: -0.02em;
-      margin-bottom: 40px;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
     .gallery {
       column-count: 3;
-      column-gap: 15px;
+      column-gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #2a2a2a;
+    }
 
-    .gallery img {
+    .gallery-item img,
+    .gallery-item video {
       width: 100%;
-      margin-bottom: 15px;
-      border-radius: 8px;
+      height: auto;
       display: block;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
-    .gallery img:hover {
+    .gallery-item:hover img,
+    .gallery-item:hover video {
       transform: scale(1.02);
-      opacity: 0.9;
     }
 
-    @media (max-width: 600px) {
+    /* Copyright & Credits Badge */
+    .credits {
+      padding: 10px 12px;
+      font-size: 0.75rem;
+      color: #888;
+      background-color: #161616;
+      border-top: 1px solid #222;
+    }
+
+    .credits a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .credits a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
       .gallery {
         column-count: 1;
       }
@@ -54,15 +92,51 @@
 </head>
 <body>
 
-  <h1>DashUI</h1>
+  <header>
+    <h1>DashUI - Car Interface Archive</h1>
+    <p class="description">
+      A curated collection of information and interaction design solutions from modern and classic cars, serving as a great source of inspiration.
+    </p>
+  </header>
 
   <div class="gallery">
-    <img src="https://picsum.photos/400/600?random=1" alt="Photo 1">
-    <img src="https://picsum.photos/400/300?random=2" alt="Photo 2">
-    <img src="https://picsum.photos/400/500?random=3" alt="Photo 3">
-    <img src="https://picsum.photos/400/400?random=4" alt="Photo 4">
-    <img src="https://picsum.photos/400/700?random=5" alt="Photo 5">
-    <img src="https://picsum.photos/400/350?random=6" alt="Photo 6">
+
+    <!-- EXAMPLE 1: VIDEO ITEM -->
+    <div class="gallery-item">
+      <video autoplay loop muted playsinline>
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-dashboard-of-a-car-driving-at-night-42283-large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="credits">
+        © Video by <a href="#" target="_blank">Brand / Author Name</a>
+      </div>
+    </div>
+
+    <!-- EXAMPLE 2: IMAGE ITEM -->
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/500?random=1" alt="Classic Car Dashboard">
+      <div class="credits">
+        © Photo by <a href="#" target="_blank">Source Name</a>
+      </div>
+    </div>
+
+    <!-- EXAMPLE 3: ANOTHER IMAGE ITEM -->
+    <div class="gallery-item">
+      <img src="https://picsum.photos/400/300?random=2" alt="Modern Infotainment">
+      <div class="credits">
+        © 2026 Original Creator / All Rights Reserved
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <video autoplay loop muted playsinline>
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-driving-on-a-road-41712-large.mp4" type="video/mp4">
+      </video>
+      <div class="credits">
+        © Concept Design by <a href="#" target="_blank">Studio Name</a>
+      </div>
+    </div>
+
   </div>
 
 </body>
