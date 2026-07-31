@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>test gallery</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 { text-align: center; margin-bottom: 30px; }
+    
+    .galeria {
+      column-count: 3;
+      column-gap: 15px;
+    }
+    .galeria img {
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .galeria img:hover {
+      transform: scale(1.02);
+    }
+  
+    @media (max-width: 600px) {
+      .galeria { column-count: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mi Galería</h1>
+
+  <div class="galeria">
+    <img src="https://picsum.photos/400/600?random=1" alt="Foto 1">
+    <img src="https://picsum.photos/400/300?random=2" alt="Foto 2">
+    <img src="https://picsum.photos/400/500?random=3" alt="Foto 3">
+    <img src="https://picsum.photos/400/400?random=4" alt="Foto 4">
+  </div>
+
+</body>
+</html>
