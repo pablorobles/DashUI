@@ -8,37 +8,16 @@
   },
   {
     "type": "image",
-    "src": ""images/ferarri-luce1.jpg"",
+    "src": "media/ferarri-luce1jpg",
     "alt": "Classic Car Dashboard",
     "creditText": "Photo by Source Name",
     "creditUrl": "https://example.com"
   },
-    {
+  {
     "type": "image",
-    "src": ""images/ferarri-luce2.jpg"",
-    "alt": "Classic Car Dashboard",
-    "creditText": "Photo by Source Name",
-    "creditUrl": "https://example.com"
-  },
-    {
-    "type": "image",
-    "src": ""images/ferarri-luce3.jpg"",
-    "alt": "Classic Car Dashboard",
-    "creditText": "Photo by Source Name",
-    "creditUrl": "https://example.com"
-  },
-     {
-    "type": "image",
-    "src": ""images/ferarri-luce4.jpg"",
-    "alt": "Classic Car Dashboard",
-    "creditText": "Photo by Source Name",
-    "creditUrl": "https://example.com"
-  },
-     {
-    "type": "image",
-    "src": ""images/ferarri-luce.jpg"",
-    "alt": "Classic Car Dashboard",
-    "creditText": "Photo by Source Name",
-    "creditUrl": "https://example.com"
-  },
+    "src": "https://picsum.photos/400/300?random=2",
+    "alt": "Modern Infotainment",
+    "creditText": "2026 Original Creator",
+    "creditUrl": ""
+  }
 ]
