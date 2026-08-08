@@ -1,23 +1,26 @@
 [
   {
+    "id": 1,
+    "type": "image",
+    "src": "media/volvo-EX90.jpg",
+    "alt": "Volvo EX90",
+    "creditText": "Volvo EX90",
+    "creditUrl": "https://www.volvocars.com/uk/cars/ex90-electric/interior-design/"
+  },
+  {
+    "id": 2,
+    "type": "image",
+    "src": "media/volvo-EX90b.jpg",
+    "alt": "Volvo EX90",
+    "creditText": "Volvo EX90",
+    "creditUrl": "https://www.volvocars.com/uk/cars/ex90-electric/interior-design/"
+  },
+  {
+    "id": 3,
     "type": "video",
-    "src": "https://assets.mixkit.co/videos/preview/mixkit-dashboard-of-a-car-driving-at-night-42283-large.mp4",
-    "alt": "Car Dashboard Night",
-    "creditText": "Video by Brand Name",
-    "creditUrl": "https://example.com"
-  },
-  {
-    "type": "image",
-    "src": "media/ferarri-luce1.jpg",
-    "alt": "Classic Car Dashboard",
-    "creditText": "Photo by Source Name",
-    "creditUrl": "https://example.com"
-  },
-  {
-    "type": "image",
-    "src": "https://picsum.photos/400/300?random=2",
-    "alt": "Modern Infotainment",
-    "creditText": "2026 Original Creator",
-    "creditUrl": ""
+    "src": "media/R1S.mp4",
+    "alt": "Rivian R1S",
+    "creditText": "Rivian R1S",
+    "creditUrl": "https://rivian.com/r1s?modal=safety#interior"
   }
 ]
